@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تحليل الطفرات الجينية</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+<h1>تحليل الفرق بين التسلسل الجيني السليم والمتحور</h1>
+
+<label for="wildType">التسلسل السليم:</label>
+<textarea id="wildType" placeholder="أدخل التسلسل السليم هنا"></textarea>
+
+<label for="mutant">التسلسل المتحور:</label>
+<textarea id="mutant" placeholder="أدخل التسلسل المتحور هنا"></textarea>
+
+<button onclick="findMutation()">تحليل الطفرة</button>
+
+<h3>نتيجة التحليل:</h3>
+<p id="result"></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

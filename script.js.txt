@@ -1,0 +1,26 @@
+function findMutation() {
+let wildType = document.getElementById('wildType').value.trim();
+let mutant = document.getElementById('mutant').value.trim();
+let result = document.getElementById('result');
+
+if (wildType === "" || mutant === "") {
+result.innerText = "يرجى إدخال كلا التسلسلين.";
+return;
+}
+
+let mutationType = detectMutation(wildType, mutant);
+result.innerText = mutationType ? `نوع الطفرة: ${mutationType}` : "لا يوجد اختلاف بين التسلسلين.";
+}
+
+function detectMutation(wildType, mutant) {
+if (wildType.length !== mutant.length) {
+return "قد يكون هناك حذف أو إضافة في التسلسل المتحور.";
+}
+
+for (let i = 0; i < wildType.length; i++) {
+if (wildType[i] !== mutant[i]) {
+return "طفرة استبدال في الموقع " + (i + 1);
+}
+}
+return null;
+}
